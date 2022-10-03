@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Capturadoresapp</string>
+    <string name="titulo_capturadores">Capturadores</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="acceda_al_sistema">Sistema de Capturadores</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="init">Iniciar Sesión</string>
+
+    <string name="picking">Picking de Mercadería</string>
+    <string name="recepcion">Recepción de Compras</string>
+    <string name="consulta">Consulta de Productos</string>
+    <string name="traspaso">Traspaso de Productos</string>
+    <string name="planilla">Planilla Reparto</string>
+    <string name="despacho">Despacho Reparto</string>
+    <string name="datos">Datos Logísticos</string>
+    <string name="pickingagrupado">Picking Agrupado</string>
+
+    <string name="documentos">Documento</string>
+    <string name="ingresedocumento">INGRESE EL DOCUMENTO</string>
+    <string name="serie">Serie</string>
+    <string name="numero">Número</string>
+    <string name="llenado">LLENADO Y REVISADO</string>
+    <string name="pickingcantidad">Cantidad:</string>
+    <string name="pickingsalir">Salir</string>
+    <string name="pickingcontinuar">Continuar</string>
+    <string name="pickingcb">Código de Producto</string>
+    <string name="pickingdoc">Documentos Pendientes</string>
+    <string name="pickingpendiente">Picking Pendiente</string>
+    <string name="pickingingresar">Ingresar</string>
+    <string name="pickingliberar">Liberar</string>
+
+    <string name="ca">Consulta de artículo</string>
+    <string name="infoca">Información de artículo</string>
+    <string name="cu">Consulta de Ubicaciones</string>
+    <string name="caalmacen">Almacén:</string>
+    <string name="cazona">Zona:</string>
+    <string name="casituacion">Situación:</string>
+    <string name="caubicaciones">Ubicaciones</string>
+    <string name="caarticulos">Artículos</string>
+    <string name="casalir">Salir</string>
+    <string name="caubiconsultar">Consultar</string>
+    <string name="infocb">Ingrese Código de Barra o Código Artículo</string>
+    <string name="infocbubi">Código de Barra / Ubicación</string>
+
+    <string name="traspasodesde">TRASPASO DESDE</string>
+    <string name="traspasohacia">TRASPASO DESDE</string>
+    <string name="traspasoalmacen">Almacen</string>
+    <string name="traspasozona">Zona</string>
+    <string name="traspasosituacion">Situación</string>
+    <string name="traspasoingresar">Ingresar</string>
+    <string name="traspasosalir">Salir</string>
+    <string name="traspasolineasxarticulo">Líneas x Artículo</string>
+    <string name="traspasoTraspasar">Traspasar</string>
+    <string name="traspasoubicacion">UBICACIÓN DE ARTÍCULO</string>
+    <string name="traspasolote">Lote</string>
+    <string name="traspasofechavenc">Fecha Venc.</string>
+    <string name="traspasocantidad">Cantidad</string>
+    <string name="traspasocb">Código de Barra de la Ubicación</string>
+    <string name="traspasograbar">Grabar</string>
+
+    <string name="datalogisticaIngresar">Ingresar Código Artículo</string>
+    <string name="datalogisticacodigo">Código</string>
+    <string name="datalogisticaarticulo">Código Artículo:</string>
+    <string name="datalogisticadescripcion">Descripción:</string>
+    <string name="datalogisticaEAN13">EAN13:</string>
+    <string name="datalogisticaDUN14">DUN14:</string>
+    <string name="datalogisticaUnidadesCaja">Unidades Caja:</string>
+    <string name="datalogisticaBultosCaja">Bultos Caja:</string>
+    <string name="datalogisticaCamasPallet">Camas Pallet:</string>
+    <string name="datalogisticaAltoCaja">Alto Caja:</string>
+    <string name="datalogisticaAnchoCaja">Ancho Caja:</string>
+    <string name="datalogisticaProfunCaja">Profun. Caja:</string>
+    <string name="datalogisticaSalir">Salir</string>
+</resources>

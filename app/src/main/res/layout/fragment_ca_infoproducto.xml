@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/infoca"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/colorBackground"/>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"></View>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/lblCodigo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="123456"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblUbicacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="UBIC.02:4444"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/lblDescripcion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="NIVEA DESODORANTE DOUBLE EFFECT VIOLET SENSES STICK 40ML"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/lblfechacad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ult. Fecha Cad."
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblUltimaFechaCaducidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="dd/mm/aaaa"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <TableLayout
+                android:id="@+id/dgLineas"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            </TableLayout>
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/lblStockAlmacen1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Stk Alm 01"
+            android:layout_weight="0.75"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblStockReserva1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Stk Res. 01"
+            android:layout_weight="0.75"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblStockTotalALmacen1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Stk. Total Alm. 01"
+            android:layout_weight="0.75"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/lblStock1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="123456"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblStockRes1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="123456"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblStockTotal1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="123456"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <TextView
+                android:id="@+id/lblCodigoBarra"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/infocb"
+                android:layout_weight="0.75"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <EditText
+                android:id="@+id/editTextCB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:background="@drawable/background_input"
+                android:ems="10"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <Button
+                android:id="@+id/btn_caUbicaciones"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0.75"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/casalir"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

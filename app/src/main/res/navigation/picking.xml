@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/picking"
+    app:startDestination="@id/menuDocumento">
+
+    <fragment
+        android:id="@+id/menuDocumento"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar Documento"
+        tools:layout="@layout/fragment_picking_documentos" />
+
+    <fragment
+        android:id="@+id/menuPickingDocPendientes"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar Documento"
+        tools:layout="@layout/fragment_picking_docpendientes" />
+
+    <fragment
+        android:id="@+id/menuPickingPendientes"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar Documento"
+        tools:layout="@layout/fragment_picking_pickingpendientes" />
+
+    <fragment
+        android:id="@+id/menuPickingPideCantidad"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar Documento"
+        tools:layout="@layout/fragment_picking_articulopidecant" />
+
+    <fragment
+        android:id="@+id/menuPickingNoPideCantidad"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar Documento"
+        tools:layout="@layout/fragment_picking_articulonopidecant" />
+
+
+</navigation>

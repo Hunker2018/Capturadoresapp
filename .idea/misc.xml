@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Capturadores/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3675" />
+        <entry key="..\:/Capturadores/app/src/main/res/drawable/background_button.xml" value="0.3665" />
+        <entry key="..\:/Capturadores/app/src/main/res/drawable/background_input.xml" value="0.3675" />
+        <entry key="..\:/Capturadores/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3675" />
+        <entry key="..\:/Capturadores/app/src/main/res/drawable/ic_menu.xml" value="0.3675" />
+        <entry key="..\:/Capturadores/app/src/main/res/drawable/ic_password.xml" value="0.3675" />
+        <entry key="..\:/Capturadores/app/src/main/res/drawable/ic_user.xml" value="0.3665" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/activity_datalogistica_consulta.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/background_input.xml" value="0.365625" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/consultaarticulo_principal.xml" value="0.30012825994014536" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/datalogistica_principal.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/documento.xml" value="0.36666666666666664" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_ca_consulta.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_ca_consultaubi.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_ca_infoproducto.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_datalogistica_consulta.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_documentos.xml" value="0.4722222222222222" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_picking_articulonopidecant.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_picking_articulopidecant.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_picking_docpendientes.xml" value="0.33" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_picking_documentos.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_picking_pickingpendientes.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_traspado_desde.xml" value="0.30012825994014536" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_traspaso_hasta.xml" value="0.30012825994014536" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_traspaso_lineaxarticulo.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_traspaso_ubicacion.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/fragment_traspaso_ubicacioncb.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/layout_navigation_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/picking_principal.xml" value="0.36666666666666664" />
+        <entry key="..\:/Capturadores/app/src/main/res/layout/traspaso_principal.xml" value="0.3009833262077811" />
+        <entry key="..\:/Capturadores/app/src/main/res/menu/navigation.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

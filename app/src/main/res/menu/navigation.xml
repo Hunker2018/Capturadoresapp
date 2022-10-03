@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuPicking"
+        android:icon="@drawable/logo001"
+        android:title="@string/picking"/>
+
+    <item android:id="@+id/menuRecepcion"
+        android:title="@string/recepcion"/>
+
+    <item android:id="@+id/menuConsulta"
+        android:title="@string/consulta"/>
+
+    <item android:id="@+id/menuPlanilla"
+        android:title="@string/planilla"/>
+
+    <item android:id="@+id/menuDespacho"
+        android:title="@string/despacho"/>
+
+    <item android:id="@+id/menuDatos"
+        android:title="@string/datos"/>
+
+    <item android:id="@+id/menuPickingAgrupado"
+        android:title="@string/pickingagrupado"/>
+</menu>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/traspaso"
+    app:startDestination="@id/menuTraspasoDesde">
+
+    <fragment
+        android:id="@+id/menuTraspasoDesde"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar datos"
+        tools:layout="@layout/fragment_traspado_desde" />
+
+    <fragment
+        android:id="@+id/menuTraspasoHacia"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar datos"
+        tools:layout="@layout/fragment_traspaso_hasta" />
+
+    <fragment
+        android:id="@+id/menuTraspasoLineas"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar datos"
+        tools:layout="@layout/fragment_traspaso_lineaxarticulo" />
+
+    <fragment
+        android:id="@+id/menuTraspasoUbicacion"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar datos"
+        tools:layout="@layout/fragment_traspaso_ubicacion" />
+
+    <fragment
+        android:id="@+id/menuTraspasoUbicacioncb"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar datos"
+        tools:layout="@layout/fragment_traspaso_ubicacioncb" />
+
+</navigation>
