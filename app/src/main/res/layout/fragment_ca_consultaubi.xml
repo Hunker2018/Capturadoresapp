@@ -160,7 +160,7 @@
             android:padding="0dp">
 
             <EditText
-                android:id="@+id/txtCACB"
+                android:id="@+id/txtCAUBICB"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"

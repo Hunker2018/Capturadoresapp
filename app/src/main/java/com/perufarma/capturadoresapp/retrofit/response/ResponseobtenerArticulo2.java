@@ -3,7 +3,7 @@ package com.perufarma.capturadoresapp.retrofit.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseobtenerArticulo {
+public class ResponseobtenerArticulo2 {
     @SerializedName("$id")
     @Expose
     private String $id;
@@ -28,6 +28,4 @@ public class ResponseobtenerArticulo {
 
     public String getData() { return data; }
     public void setData(String data) { this.data = data; }
-
-
 }

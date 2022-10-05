@@ -80,5 +80,34 @@ public class ConsultaArticuloFragment extends Fragment {
                }
             }
         });
+
+        btn_caArticulos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String vAlmacen =txtCAAlmacen.getText().toString();
+                String vZona = txtCAZona.getText().toString();
+                String vSituacion = txtCASituacion.getText().toString();
+
+                if(vAlmacen.equals("")){
+                    Toast.makeText(context, "Ingrese el almacén", Toast.LENGTH_SHORT).show();
+                }else
+                {
+                    Bundle args = new Bundle();
+                    args.putString("almacenca", vAlmacen);
+                    args.putString("zonaca", vZona);
+                    args.putString("situacionca", vSituacion);
+
+                    FragmentTransaction trans = getFragmentManager().beginTransaction();
+                    ConsultaArticuloInfoFragment consultaArticuloInfoFragment = new ConsultaArticuloInfoFragment();
+                    consultaArticuloInfoFragment.setArguments(args);
+                    trans.replace(R.id.fragmentCA, consultaArticuloInfoFragment);
+                    trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    trans.addToBackStack(null);
+                    trans.commit();
+                }
+
+
+            }
+        });
     }
 }

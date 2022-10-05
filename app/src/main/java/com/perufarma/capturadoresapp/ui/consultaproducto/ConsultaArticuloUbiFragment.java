@@ -13,11 +13,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.perufarma.capturadoresapp.R;
 import com.perufarma.capturadoresapp.retrofit.InterfaceAPI;
 import com.perufarma.capturadoresapp.retrofit.RetrofitInstance;
+import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerArticulo;
 import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerArticuloxUbicacion;
+import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerArticulo;
 import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerArticuloxUbicacion;
 
 import java.util.ArrayList;
@@ -37,8 +40,7 @@ public class ConsultaArticuloUbiFragment extends Fragment {
 
     private TextView lblCACodigo, lblCAUbicacion, lblCADescripcion, lblCACantidad, lblCALote, lblCAFechaVencimiento;
     private EditText txtCACB;
-    private Button btn_caubiConsultar;
-
+    private Button btn_caubiConsultar, btn_caubiSalir;
 
     private List<ResponseobtenerArticuloxUbicacion.Data> listaUbicaciones = new ArrayList<>();
 
@@ -62,8 +64,9 @@ public class ConsultaArticuloUbiFragment extends Fragment {
         lblCACantidad = view.findViewById(R.id.lblCACantidad);
         lblCALote = view.findViewById(R.id.lblCALote);
         lblCAFechaVencimiento = view.findViewById(R.id.lblCAFechaVencimiento);
-        txtCACB = view.findViewById(R.id.txtCACB);
+        txtCACB = view.findViewById(R.id.txtCAUBICB);
         btn_caubiConsultar = view.findViewById(R.id.btn_caubiConsultar);
+        btn_caubiSalir = view.findViewById(R.id.btn_caubiSalir);
 
         btn_caubiConsultar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,11 +74,53 @@ public class ConsultaArticuloUbiFragment extends Fragment {
                mostrarInformacion();
             }
         });
+
+        btn_caubiSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction trans = getFragmentManager().beginTransaction();
+                ConsultaArticuloFragment consultaArticuloFragment = new ConsultaArticuloFragment();
+                trans.replace(R.id.fragmentCA, consultaArticuloFragment);
+                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
+
+
     }
 
     private void retrofitInit() {
         retrofitInstance = RetrofitInstance.getInstance();
         interfaceAPI = retrofitInstance.getInterfaceAPI();
+    }
+
+    private void obtenerDescripcionArticulo(String empresa, String codarticulo)
+    {
+
+        RequestobtenerArticulo requestobtenerArticulo = new RequestobtenerArticulo();
+
+        requestobtenerArticulo.setEmpresa(empresa);
+        requestobtenerArticulo.setArticulo(codarticulo);
+
+        Call<ResponseobtenerArticulo> call = interfaceAPI.getResponseobtenerArticulo(requestobtenerArticulo);
+        call.enqueue(new Callback<ResponseobtenerArticulo>() {
+            @Override
+            public void onResponse(Call<ResponseobtenerArticulo> call, Response<ResponseobtenerArticulo> response) {
+                if(response.isSuccessful())
+                {
+                    String[] datosArticulo;
+                    datosArticulo = response.body().getData().split(",");
+
+                    lblCADescripcion.setText("Descripción: " + datosArticulo[1]);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseobtenerArticulo> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void mostrarInformacion()
@@ -85,13 +130,15 @@ public class ConsultaArticuloUbiFragment extends Fragment {
         String almacenca = args.getString("almacenca");
         String zonaca = args.getString("zonaca");
         String situacionca = args.getString("situacionca");
+        String cb = txtCACB.getText().toString();
 
         RequestobtenerArticuloxUbicacion requestobtenerArticuloxUbicacion = new RequestobtenerArticuloxUbicacion();
+
         requestobtenerArticuloxUbicacion.setEmpresa("101");
-        requestobtenerArticuloxUbicacion.setAlmacen(args.getString(almacenca));
-        requestobtenerArticuloxUbicacion.setZona(args.getString(zonaca));
-        requestobtenerArticuloxUbicacion.setSituacion(args.getString(situacionca));
-        requestobtenerArticuloxUbicacion.setAlmacen(txtCACB.getText().toString());
+        requestobtenerArticuloxUbicacion.setAlmacen(almacenca);
+        requestobtenerArticuloxUbicacion.setZona(zonaca);
+        requestobtenerArticuloxUbicacion.setSituacion(situacionca);
+        requestobtenerArticuloxUbicacion.setUbicacion(cb);
 
         Call<ResponseobtenerArticuloxUbicacion> call = interfaceAPI.getResponseobtenerArticuloxUbicacion(requestobtenerArticuloxUbicacion);
         call.enqueue(new Callback<ResponseobtenerArticuloxUbicacion>() {
@@ -101,6 +148,7 @@ public class ConsultaArticuloUbiFragment extends Fragment {
                 {
                     assert response.body() != null;
                     String v_mensaje = response.body().getMensaje();
+                    Integer registros = response.body().getRegistros();
 
                     if (v_mensaje.equals("Ok"))
                     {
@@ -118,12 +166,13 @@ public class ConsultaArticuloUbiFragment extends Fragment {
                         {
                             if (listaUbicaciones.size() > 0)
                             {
-                                lblCAUbicacion.setText(listaUbicaciones.get(0).getUbicac());
-                                lblCACodigo.setText(listaUbicaciones.get(0).getArticulo());
-                                lblCADescripcion.setText(listaUbicaciones.get(0).getArticulo());
-                                lblCACantidad.setText(listaUbicaciones.get(0).getCant());
-                                lblCALote.setText(listaUbicaciones.get(0).getLote());
-                                lblCAFechaVencimiento.setText(listaUbicaciones.get(0).getFvenc());
+                                obtenerDescripcionArticulo("101", listaUbicaciones.get(0).getArticulo());
+                                lblCAUbicacion.setText("Ubicación: " + listaUbicaciones.get(0).getUbicac());
+                                lblCACodigo.setText("Código: " + listaUbicaciones.get(0).getArticulo());
+
+                                lblCACantidad.setText("Cantidad: " + listaUbicaciones.get(0).getCant());
+                                lblCALote.setText("Lote: " + listaUbicaciones.get(0).getLote());
+                                lblCAFechaVencimiento.setText("Fec. Venc: " + listaUbicaciones.get(0).getFvenc());
                             }else
                             {
                                 Toast.makeText(context, "La ubicación no tiene artículo", Toast.LENGTH_SHORT).show();
@@ -133,10 +182,13 @@ public class ConsultaArticuloUbiFragment extends Fragment {
                 }
             }
 
+
+
             @Override
             public void onFailure(Call<ResponseobtenerArticuloxUbicacion> call, Throwable t) {
-
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

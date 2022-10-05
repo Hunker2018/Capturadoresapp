@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ResponseobtenerArticuloxUbicacion {
+public class ResponseobtenerUbicacionesDG {
 
     @SerializedName("$id")
     @Expose
@@ -14,10 +14,6 @@ public class ResponseobtenerArticuloxUbicacion {
     @SerializedName("mensaje")
     @Expose
     private String mensaje;
-
-    @SerializedName("registros")
-    @Expose
-    private Integer registros;
 
     @SerializedName("data")
     @Expose
@@ -29,12 +25,8 @@ public class ResponseobtenerArticuloxUbicacion {
     public String getMensaje() { return mensaje; }
     public void setMensaje(String mensaje) { this.mensaje = mensaje; }
 
-    public Integer getRegistros() { return registros; }
-    public void setRegistros(Integer registros) { this.registros = registros; }
-
     public List<Data> getData() { return data; }
     public void setData(List<Data> data) { this.data = data; }
-
 
     public class Data
     {
@@ -114,9 +106,7 @@ public class ResponseobtenerArticuloxUbicacion {
 
         public String getCant() { return cant; }
         public void setCant(String cant) { this.cant = cant; }
-
-
-
     }
+
 
 }

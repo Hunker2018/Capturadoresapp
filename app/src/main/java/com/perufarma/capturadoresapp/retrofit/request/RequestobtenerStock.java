@@ -3,7 +3,7 @@ package com.perufarma.capturadoresapp.retrofit.request;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RequestobtenerArticuloxUbicacion {
+public class RequestobtenerStock {
 
     @SerializedName("empresa")
     @Expose
@@ -25,6 +25,10 @@ public class RequestobtenerArticuloxUbicacion {
     @Expose
     private String situacion;
 
+    @SerializedName("disponible")
+    @Expose
+    private String disponible;
+
     public String getEmpresa() { return empresa; }
     public void setEmpresa(String empresa) { this.empresa = empresa; }
 
@@ -40,5 +44,7 @@ public class RequestobtenerArticuloxUbicacion {
     public String getSituacion() { return situacion; }
     public void setSituacion(String situacion) { this.situacion = situacion; }
 
+    public String getDisponible() { return disponible; }
+    public void setDisponible(String disponible) { this.disponible = disponible; }
 
 }

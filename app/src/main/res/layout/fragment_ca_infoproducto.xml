@@ -45,7 +45,7 @@
             android:padding="0dp">
 
             <TextView
-                android:id="@+id/lblCodigo"
+                android:id="@+id/lblCAInfoCodigo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="123456"
@@ -53,7 +53,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblUbicacion"
+                android:id="@+id/lblCAInfoUbicacion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="UBIC.02:4444"
@@ -68,7 +68,7 @@
             android:padding="0dp">
 
             <TextView
-                android:id="@+id/lblDescripcion"
+                android:id="@+id/lblCAInfoDescripcion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="NIVEA DESODORANTE DOUBLE EFFECT VIOLET SENSES STICK 40ML"
@@ -85,7 +85,7 @@
             android:padding="0dp">
 
             <TextView
-                android:id="@+id/lblfechacad"
+                android:id="@+id/lblCAInfofechacad"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Ult. Fecha Cad."
@@ -93,7 +93,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblUltimaFechaCaducidad"
+                android:id="@+id/lblCAInfoUltimaFechaCaducidad"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="dd/mm/aaaa"
@@ -108,7 +108,7 @@
             android:padding="0dp">
 
             <TableLayout
-                android:id="@+id/dgLineas"
+                android:id="@+id/dgCAInfoLineas"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
             </TableLayout>
@@ -123,7 +123,7 @@
         android:padding="0dp">
 
         <TextView
-            android:id="@+id/lblStockAlmacen1"
+            android:id="@+id/lblCAInfoStockAlmacen1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Stk Alm 01"
@@ -131,7 +131,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/lblStockReserva1"
+            android:id="@+id/lblCAInfoStockReserva1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Stk Res. 01"
@@ -139,7 +139,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/lblStockTotalALmacen1"
+            android:id="@+id/lblCAInfoStockTotalALmacen1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Stk. Total Alm. 01"
@@ -155,7 +155,7 @@
             android:padding="0dp">
 
             <TextView
-                android:id="@+id/lblStock1"
+                android:id="@+id/lblCAInfoStock1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="123456"
@@ -163,7 +163,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblStockRes1"
+                android:id="@+id/lblCAInfoStockRes1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="123456"
@@ -171,7 +171,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/lblStockTotal1"
+                android:id="@+id/lblCAInfoStockTotal1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="123456"
@@ -190,6 +190,57 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scrollbars="horizontal|vertical"
+                    android:scrollbarStyle="outsideInset"
+                    android:fillViewport="true">
+
+                    <TableLayout
+                        android:id="@+id/lbxUbicacionesxArticulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:isScrollContainer="true">
+                    </TableLayout>
+                </ScrollView>
+            </LinearLayout>
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <RadioGroup
+                android:id="@+id/gruporadioca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cód. Barra"
+                    android:checked="true"></RadioButton>
+                <RadioButton
+                    android:id="@+id/radio_articulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Artículo"
+                    ></RadioButton>
+            </RadioGroup>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -216,7 +267,7 @@
             android:padding="0dp">
 
             <EditText
-                android:id="@+id/editTextCB"
+                android:id="@+id/txtCAInfoCB"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
@@ -233,7 +284,7 @@
             android:padding="0dp">
 
             <Button
-                android:id="@+id/btn_caUbicaciones"
+                android:id="@+id/btn_caInfoSalir"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
