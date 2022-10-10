@@ -18,6 +18,8 @@ import com.perufarma.capturadoresapp.retrofit.InterfaceAPI;
 import com.perufarma.capturadoresapp.retrofit.RetrofitInstance;
 import com.perufarma.capturadoresapp.retrofit.response.ResponseLogin;
 import com.perufarma.capturadoresapp.retrofit.request.RequestLogin;
+import com.perufarma.capturadoresapp.ui.planillareparto.PlanillaRepartoActivity;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -122,7 +124,7 @@ public class MainActivity  extends AppCompatActivity {
     }
 
     private void goPrincipalScreen() {
-        Intent intent = new Intent(MainActivity.this, ConsultaArticuloPrincipal.class);
+        Intent intent = new Intent(MainActivity.this, PlanillaRepartoActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();

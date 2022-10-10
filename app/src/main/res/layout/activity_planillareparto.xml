@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    tools:context="ui.planillareparto.PlanillaRepartoActivity"
+    >
+
+
+    <TextView
+        android:id="@+id/viewpr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/planillareparto"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/colorBackground"/>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewpr">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/nroreparto"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPRReparto"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.75"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/background_input"
+                android:textColor="@color/colorBlack"
+                android:ems="10"
+                android:inputType="text"/>
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/transportista"
+            android:layout_weight="0.75"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <EditText
+                android:id="@+id/txtPRTransportista"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.75"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="18dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/background_input"
+                android:textColor="@color/colorBlack"
+                android:ems="10"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/fecreparto"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPRFechaReparto"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.75"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/background_input"
+                android:textColor="@color/colorBlack"
+                android:ems="10"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/placa"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPRPlaca"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.75"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/background_input"
+                android:textColor="@color/colorBlack"
+                android:ems="10"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/documentospr"
+                android:layout_weight="0.75"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtPRNumDocumentos"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.75"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/background_input"
+                android:textColor="@color/colorBlack"
+                android:ems="10"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <Button
+                android:id="@+id/btn_prConfirmar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0.75"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/confirmarpr"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/btn_prSalir"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/salirpr"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

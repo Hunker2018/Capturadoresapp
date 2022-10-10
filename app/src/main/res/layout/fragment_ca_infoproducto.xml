@@ -130,13 +130,7 @@
             android:layout_weight="0.75"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/lblCAInfoStockReserva1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Stk Res. 01"
-            android:layout_weight="0.75"
-            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/lblCAInfoStockTotalALmacen1"
@@ -162,13 +156,6 @@
                 android:layout_weight="0.75"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/lblCAInfoStockRes1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="123456"
-                android:layout_weight="0.75"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblCAInfoStockTotal1"

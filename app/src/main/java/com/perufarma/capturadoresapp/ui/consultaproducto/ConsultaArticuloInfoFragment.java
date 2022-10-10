@@ -26,12 +26,23 @@ import com.perufarma.capturadoresapp.retrofit.InterfaceAPI;
 import com.perufarma.capturadoresapp.retrofit.RetrofitInstance;
 import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerArticulo;
 import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerArticulo2;
+import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerFechaCaducidad;
+import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerStock;
+import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerStockAlmacen;
+import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerUbicacionAlmacen;
 import com.perufarma.capturadoresapp.retrofit.request.RequestobtenerUbicacionesDG;
 import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerArticulo;
 import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerArticulo2;
+import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerFechaCaducidad;
+import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerStock;
+import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerStockAlmacen;
+import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerUbicacionAlmacen;
 import com.perufarma.capturadoresapp.retrofit.response.ResponseobtenerUbicacionesDG;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -58,6 +69,10 @@ public class ConsultaArticuloInfoFragment extends Fragment {
     List<ResponseobtenerUbicacionesDG.Data> lista = new ArrayList<>();
 
 
+    private static final String UBICACION_ALMACEN = "02";
+    private static final String UBICACION_ZONA = "001";
+    private static final String STOCK_ALMACEN = "01";
+
     String articulo = "";
     Boolean flagproducto = true;
 
@@ -69,11 +84,14 @@ public class ConsultaArticuloInfoFragment extends Fragment {
         InitialViews(view);
 
         retrofitInit();
+        limpiar();
 
         return view;
     }
 
     public void cargarUbicaciones(String articulo) {
+
+        stk.removeAllViews();
 
         TableRow tbrow0 = new TableRow(context);
         TextView tv0 = new TextView(context);
@@ -152,7 +170,119 @@ public class ConsultaArticuloInfoFragment extends Fragment {
 
     public void obtenerStock(String empresa, String articulo, String almacen, String zona, String situacion, String disponible)
     {
+        RequestobtenerStock requestobtenerStock = new RequestobtenerStock();
+        requestobtenerStock.setEmpresa(empresa);
+        requestobtenerStock.setAlmacen(almacen);
+        requestobtenerStock.setZona(zona);
+        requestobtenerStock.setArticulo(articulo);
+        requestobtenerStock.setSituacion(situacion);
+        requestobtenerStock.setDisponible(disponible);
 
+        Call<ResponseobtenerStock> call = interfaceAPI.getResponseobtenerStock(requestobtenerStock);
+        call.enqueue(new Callback<ResponseobtenerStock>() {
+            @Override
+            public void onResponse(Call<ResponseobtenerStock> call, Response<ResponseobtenerStock> response) {
+
+                if(response.isSuccessful())
+                {
+                    lblCAInfoStock1.setText(response.body().getStock());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseobtenerStock> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void obtenerUbicacionAlmacen(String empresa, String articulo)
+    {
+        RequestobtenerUbicacionAlmacen requestobtenerUbicacionAlmacen = new RequestobtenerUbicacionAlmacen();
+        requestobtenerUbicacionAlmacen.setEmpresa(empresa);
+        requestobtenerUbicacionAlmacen.setAlmacen(UBICACION_ALMACEN);
+        requestobtenerUbicacionAlmacen.setZona(UBICACION_ZONA);
+        requestobtenerUbicacionAlmacen.setArticulo(articulo);
+
+
+        Call<ResponseobtenerUbicacionAlmacen> call = interfaceAPI.getResponseobtenerUbicacionAlmacen(requestobtenerUbicacionAlmacen);
+        call.enqueue(new Callback<ResponseobtenerUbicacionAlmacen>() {
+            @Override
+            public void onResponse(Call<ResponseobtenerUbicacionAlmacen> call, Response<ResponseobtenerUbicacionAlmacen> response) {
+
+                if(response.isSuccessful())
+                {
+                    String ubicacion = response.body().getUbicacion();
+                    lblCAInfoUbicacion.setText("UBIC. " + UBICACION_ALMACEN + ":" + ubicacion);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseobtenerUbicacionAlmacen> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void obtenerStockAlmacne(String empresa, String articulo)
+    {
+        RequestobtenerStockAlmacen requestobtenerStockAlmacen = new RequestobtenerStockAlmacen();
+        requestobtenerStockAlmacen.setEmpresa(empresa);
+        requestobtenerStockAlmacen.setAlmacen(STOCK_ALMACEN);
+        requestobtenerStockAlmacen.setArticulo(articulo);
+
+
+        Call<ResponseobtenerStockAlmacen> call = interfaceAPI.getResponseobtenerStockAlmacen(requestobtenerStockAlmacen);
+        call.enqueue(new Callback<ResponseobtenerStockAlmacen>() {
+            @Override
+            public void onResponse(Call<ResponseobtenerStockAlmacen> call, Response<ResponseobtenerStockAlmacen> response) {
+
+                if(response.isSuccessful())
+                {
+                    lblCAInfoStockTotalALmacen1.setText("Stk. Total Alm. " + STOCK_ALMACEN);
+                    lblCAInfoStockTotal1.setText(response.body().getStock());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseobtenerStockAlmacen> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void obtenerFechaCaducidad(String empresa, String articulo)
+    {
+        RequestobtenerFechaCaducidad requestobtenerFechaCaducidad = new RequestobtenerFechaCaducidad();
+        requestobtenerFechaCaducidad.setEmpresa(empresa);
+        requestobtenerFechaCaducidad.setArticulo(articulo);
+
+
+        Call<ResponseobtenerFechaCaducidad> call = interfaceAPI.getResponseobtenerFechaCaducidad(requestobtenerFechaCaducidad);
+        call.enqueue(new Callback<ResponseobtenerFechaCaducidad>() {
+            @Override
+            public void onResponse(Call<ResponseobtenerFechaCaducidad> call, Response<ResponseobtenerFechaCaducidad> response) {
+
+                if(response.isSuccessful())
+                {
+                    String fecha = response.body().getFecha();
+                    lblCAInfofechacad.setText("Ult.Fecha.Caducidad");
+
+                    if (fecha.equals("01/01/0001"))
+                    {
+                        lblCAInfoUltimaFechaCaducidad.setText("No se registró");
+                    }else
+                    {
+                        lblCAInfoUltimaFechaCaducidad.setText(fecha);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseobtenerFechaCaducidad> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void InitialViews(View view)
@@ -163,10 +293,8 @@ public class ConsultaArticuloInfoFragment extends Fragment {
         lblCAInfofechacad = view.findViewById(R.id.lblCAInfofechacad);
         lblCAInfoUltimaFechaCaducidad = view.findViewById(R.id.lblCAInfoUltimaFechaCaducidad);
         lblCAInfoStockAlmacen1 = view.findViewById(R.id.lblCAInfoStockAlmacen1);
-        lblCAInfoStockReserva1 = view.findViewById(R.id.lblCAInfoStockReserva1);
         lblCAInfoStockTotalALmacen1 = view.findViewById(R.id.lblCAInfoStockTotalALmacen1);
         lblCAInfoStock1 = view.findViewById(R.id.lblCAInfoStock1);
-        lblCAInfoStockRes1 = view.findViewById(R.id.lblCAInfoStockRes1);
         lblCAInfoStockTotal1 = view.findViewById(R.id.lblCAInfoStockTotal1);
 
         txtCAInfoCB = view.findViewById(R.id.txtCAInfoCB);
@@ -197,6 +325,7 @@ public class ConsultaArticuloInfoFragment extends Fragment {
         btn_caInfoSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(flagproducto)
                 {
                     String tArticulo = txtCAInfoCB.getText().toString();
@@ -204,6 +333,8 @@ public class ConsultaArticuloInfoFragment extends Fragment {
 
                     requestobtenerArticulo.setEmpresa("101");
                     requestobtenerArticulo.setArticulo(tArticulo);
+
+
 
                     Call<ResponseobtenerArticulo2> call = interfaceAPI.getResponseobtenerArticulo2(requestobtenerArticulo);
                     call.enqueue(new Callback<ResponseobtenerArticulo2>() {
@@ -223,9 +354,27 @@ public class ConsultaArticuloInfoFragment extends Fragment {
                                         String[] cadena = articulo.split(",");
                                         String producto = cadena[0];
 
-                                        cargarUbicaciones(producto);
+                                        Bundle args = getArguments();
 
+                                        String almacenca = args.getString("almacenca");
+                                        String zonaca = args.getString("zonaca");
+                                        String situacionca = args.getString("situacionca");
+
+
+                                        cargarUbicaciones(producto);
+                                        lblCAInfoCodigo.setText(producto);
+                                        lblCAInfoDescripcion.setText(cadena[1]);
+                                        obtenerStock("101", producto, almacenca, zonaca, situacionca, "S");
+                                        lblCAInfoStockAlmacen1.setText("Stk. Alm. " + almacenca);
+
+                                        obtenerUbicacionAlmacen("101", producto);
+                                        obtenerStockAlmacne("101", producto);
+                                        obtenerFechaCaducidad("101", producto);
                                     }
+                                }else
+                                {
+                                    Toast.makeText(context, "El producto no está registrado", Toast.LENGTH_SHORT).show();
+                                    limpiar();
                                 }
 
                             }
@@ -261,11 +410,26 @@ public class ConsultaArticuloInfoFragment extends Fragment {
                                         String[] cadena = articulo.split(",");
                                         String producto = cadena[0];
 
+                                        Bundle args = getArguments();
+
+                                        String almacenca = args.getString("almacenca");
+                                        String zonaca = args.getString("zonaca");
+                                        String situacionca = args.getString("situacionca");
+
                                         cargarUbicaciones(producto);
 
-                                        lblCAInfoStock1.setText("");
+                                        lblCAInfoCodigo.setText(producto);
+                                        lblCAInfoDescripcion.setText(cadena[1]);
+                                        obtenerStock("101", producto, almacenca, zonaca, situacionca, "S");
+                                        lblCAInfoStockAlmacen1.setText("Stk. Alm. " + almacenca);
 
+                                        obtenerUbicacionAlmacen("101", producto);
+                                        obtenerStockAlmacne("101", producto);
+                                        obtenerFechaCaducidad("101", producto);
                                     }
+                                }else{
+                                    Toast.makeText(context, "El producto no está registrado", Toast.LENGTH_SHORT).show();
+                                    limpiar();
                                 }
                             }
                         }
@@ -302,18 +466,17 @@ public class ConsultaArticuloInfoFragment extends Fragment {
         interfaceAPI = retrofitInstance.getInterfaceAPI();
     }
 
-
-    private void obtenerArticulo(String empresa, String codarticulo)
+    private void limpiar()
     {
-
-
-    }
-
-
-    private void obtenerArticulo2(String empresa, String codarticulo)
-    {
-
-
+        lblCAInfoCodigo.setText("");
+        lblCAInfoDescripcion.setText("");
+        lblCAInfoStock1.setText("");
+        lblCAInfoStockAlmacen1.setText("");
+        lblCAInfoStockTotalALmacen1.setText("");
+        lblCAInfoStockTotal1.setText("");
+        lblCAInfoUbicacion.setText("");
+        lblCAInfofechacad.setText("");
+        lblCAInfoUltimaFechaCaducidad.setText("");
     }
 
 }

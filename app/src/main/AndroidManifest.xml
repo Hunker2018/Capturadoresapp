@@ -32,6 +32,10 @@
         <activity
             android:name=".ui.consultaproducto.ConsultaArticuloPrincipal"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.planillareparto.PlanillaRepartoActivity"
+            android:screenOrientation="portrait" />
     </application>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

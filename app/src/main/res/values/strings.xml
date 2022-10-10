@@ -72,4 +72,13 @@
     <string name="datalogisticaAnchoCaja">Ancho Caja:</string>
     <string name="datalogisticaProfunCaja">Profun. Caja:</string>
     <string name="datalogisticaSalir">Salir</string>
+
+    <string name="planillareparto">CONFIRMAR SALIDA DE DESPACHO TRANSPORTISTA</string>
+    <string name="nroreparto">N° Reparto</string>
+    <string name="transportista">Transportista</string>
+    <string name="fecreparto">Fec. Reparto</string>
+    <string name="placa">Placa</string>
+    <string name="documentospr">N°Documentos</string>
+    <string name="confirmarpr">Confirmar</string>
+    <string name="salirpr">Salir</string>
 </resources>
