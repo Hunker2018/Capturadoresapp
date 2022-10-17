@@ -44,7 +44,8 @@
     <string name="infocbubi">Código de Barra / Ubicación</string>
 
     <string name="traspasodesde">TRASPASO DESDE</string>
-    <string name="traspasohacia">TRASPASO DESDE</string>
+    <string name="traspasohacia">TRASPASO HACIA</string>
+    <string name="traspasoarticulo">TRASPASO DE ARTICULO</string>
     <string name="traspasoalmacen">Almacen</string>
     <string name="traspasozona">Zona</string>
     <string name="traspasosituacion">Situación</string>
@@ -57,6 +58,7 @@
     <string name="traspasofechavenc">Fecha Venc.</string>
     <string name="traspasocantidad">Cantidad</string>
     <string name="traspasocb">Código de Barra de la Ubicación</string>
+    <string name="traspadocbarticulo">Código de Barra/ Código libra del Artículo</string>
     <string name="traspasograbar">Grabar</string>
 
     <string name="datalogisticaIngresar">Ingresar Código Artículo</string>

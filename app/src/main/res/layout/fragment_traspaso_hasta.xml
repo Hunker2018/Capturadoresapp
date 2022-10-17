@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:text="@string/traspasodesde"
+        android:text="@string/traspasohacia"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/txtAlmacen"
+                android:id="@+id/txtTHAlmacen"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
@@ -77,7 +77,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/txtZona"
+                android:id="@+id/txtTHZona"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
@@ -102,7 +102,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/txtSituacion"
+                android:id="@+id/txtTHSituacion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
@@ -120,7 +120,7 @@
 
 
             <Button
-                android:id="@+id/btn_tIngresar"
+                android:id="@+id/btn_tHIngresar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -133,7 +133,7 @@
 
 
             <Button
-                android:id="@+id/btn_tSalir"
+                android:id="@+id/btn_tHSalir"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"

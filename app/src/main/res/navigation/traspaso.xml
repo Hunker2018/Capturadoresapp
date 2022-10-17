@@ -18,6 +18,13 @@
         tools:layout="@layout/fragment_traspaso_hasta" />
 
     <fragment
+        android:id="@+id/menuArticuloCB"
+        android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
+        android:label="Ingresar datos"
+        tools:layout="@layout/fragment_traspaso_articulocb" />
+
+
+    <fragment
         android:id="@+id/menuTraspasoLineas"
         android:name="com.perufarma.capturadoresapp.ui.login.MainActivity"
         android:label="Ingresar datos"
